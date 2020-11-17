@@ -1,11 +1,11 @@
 ﻿namespace ResolveUR.VSIXPackage
 {
-    using System;
-    using System.Diagnostics;
-    using System.Globalization;
     using EnvDTE;
     using Microsoft.VisualStudio.Shell;
     using Microsoft.VisualStudio.Shell.Interop;
+    using System;
+    using System.Diagnostics;
+    using System.Globalization;
     using Constants = Library.Constants;
     using Thread = System.Threading.Thread;
 

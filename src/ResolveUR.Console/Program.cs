@@ -1,8 +1,8 @@
 ﻿namespace ResolveUR
 {
+    using Library;
     using System;
     using System.IO;
-    using Library;
 
     public static class Program
     {
