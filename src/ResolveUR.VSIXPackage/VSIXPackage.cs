@@ -90,7 +90,7 @@ namespace ResolveUR.VSIXPackage
 
                 _helper.ResolveurCanceled += Helper_ResolveurCanceled;
 
-                _resolveur.Resolve();
+                _resolveur.ResolveAsync();
             }
             catch (FileNotFoundException fnfe)
             {

@@ -16,7 +16,7 @@
             _resolveur = resolveUr;
         }
 
-        public void Resolve()
+        public async System.Threading.Tasks.Task ResolveAsync()
         {
             // get all project file full paths from solution file
             var projectFiles = LoadProjects(_resolveur.FilePath);
@@ -30,7 +30,7 @@
                     continue;
 
                 _resolveur.FilePath = projectFile;
-                _resolveur.Resolve();
+                await _resolveur.ResolveAsync().ConfigureAwait(false);
             }
         }
 

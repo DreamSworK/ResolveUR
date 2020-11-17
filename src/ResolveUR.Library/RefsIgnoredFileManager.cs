@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.IO;
+    using Microsoft.VisualStudio.Threading;
     using System.Linq;
     using System.Xml;
     using static System.String;
@@ -43,19 +44,20 @@
             }
         }
 
-        public static void LaunchRefsFile()
+        public static async System.Threading.Tasks.Task LaunchRefsFileAsync()
         {
             using (var process = new Process
                 {
                     StartInfo = new ProcessStartInfo
                     {
-                        UseShellExecute = true,
-                        FileName = RefsReviewFilePath
+                        FileName = "devenv.exe",
+                        Arguments = "/edit " + RefsReviewFilePath,
                     }
                 }
             )
             {
                 process.Start();
+                await process.WaitForExitAsync().ConfigureAwait(false);
                 process.WaitForExit();
             }
         }

@@ -50,7 +50,7 @@
         public bool ShouldResolvePackage { get; set; }
 
         // returns false if there were build errors
-        public void Resolve()
+        public async System.Threading.Tasks.Task ResolveAsync()
         {
             _isCancel = false;
 
@@ -76,7 +76,7 @@
             if (_isCancel)
                 return;
 
-            RefsIgnoredFileManager.LaunchRefsFile();
+            await RefsIgnoredFileManager.LaunchRefsFileAsync().ConfigureAwait(false);
 
             ProjectResolveCompleteEvent?.Invoke();
         }

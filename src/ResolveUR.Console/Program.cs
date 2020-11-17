@@ -21,7 +21,7 @@
                     Resolveur_HasBuildErrorsEvent,
                     Resolveur_ProjectResolveCompleteEvent);
 
-                _resolveur.Resolve();
+                _resolveur.ResolveAsync();
             }
             catch (ArgumentException ae)
             {

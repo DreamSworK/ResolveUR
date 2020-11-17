@@ -6,7 +6,7 @@
 
     public interface IResolve
     {
-        void Resolve();
+        System.Threading.Tasks.Task ResolveAsync();
 
         void Clean();
 
